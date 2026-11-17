@@ -55,11 +55,11 @@
           <span>Home</span>
         </a>
 
-        <!-- Subjects DropDown with Bulletproof Bridge & SVGs -->
+        <!-- MasterClass DropDown with Bulletproof Bridge & SVGs -->
         <div class="master-dropdown" id="subjectsDropdown">
-          <button type="button" class="master-dropdown-toggle" onclick="toggleSubjectsDropdown(event)" aria-haspopup="true" aria-expanded="false" title="Explore All Subjects">
+          <button type="button" class="master-dropdown-toggle" onclick="toggleSubjectsDropdown(event)" aria-haspopup="true" aria-expanded="false" title="Explore All MasterClasses">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
-            <span>Subjects</span>
+            <span>MasterClass</span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <div class="master-dropdown-menu mega-menu" id="subjectsMegaMenu">
@@ -467,26 +467,44 @@
             </div>
           </div>
         </div>
+
+        <!-- Demo DropDown -->
+        <div class="master-dropdown demo-dropdown" id="demoDropdown">
+          <button type="button" class="master-dropdown-toggle" onclick="toggleDemoDropdown(event)" aria-haspopup="true" aria-expanded="false" title="Demos">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+            <span>Demo</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="master-dropdown-menu demo-menu">
+            <a href="../../why-tinitiate.html" class="master-dropdown-item">
+              <span class="dropdown-item-icon icon-why"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 6.9L21 9.3l-5.2 4.4L17.5 21 12 17.3 6.5 21l1.7-7.3L3 9.3l6.6-.4z"/></svg></span>
+              <span class="dropdown-item-content"><span class="dropdown-item-title">Why TinitiateAI</span><span class="dropdown-item-sub">What makes the academy different</span></span>
+            </a>
+            <div class="demo-menu-label">Domain demos</div>
+            <a href="../../demos/foundational.html" class="master-dropdown-item">
+              <span class="dropdown-item-icon icon-found"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg></span>
+              <span class="dropdown-item-content"><span class="dropdown-item-title">Foundational</span><span class="dropdown-item-sub">CS fundamentals, Python, SQL & APIs</span></span>
+            </a>
+            <a href="../../demos/data-engineering.html" class="master-dropdown-item">
+              <span class="dropdown-item-icon icon-de"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg></span>
+              <span class="dropdown-item-content"><span class="dropdown-item-title">Data Engineering</span><span class="dropdown-item-sub">Pipelines, lakehouses & cloud data</span></span>
+            </a>
+            <a href="../../demos/ai-developer.html" class="master-dropdown-item">
+              <span class="dropdown-item-icon icon-ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></span>
+              <span class="dropdown-item-content"><span class="dropdown-item-title">AI Developer</span><span class="dropdown-item-sub">GenAI, agents & LLM application builds</span></span>
+            </a>
+            <a href="../../demos/data-governance.html" class="master-dropdown-item">
+              <span class="dropdown-item-icon icon-gov"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              <span class="dropdown-item-content"><span class="dropdown-item-title">Data Governance</span><span class="dropdown-item-sub">Catalogs, lineage & policy</span></span>
+            </a>
+            <a href="../../demos/full-stack.html" class="master-dropdown-item">
+              <span class="dropdown-item-icon icon-fs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></span>
+              <span class="dropdown-item-content"><span class="dropdown-item-title">Full Stack</span><span class="dropdown-item-sub">Frontend, backend & deployment</span></span>
+            </a>
+          </div>
+        </div>
       </nav>
 
-      <!-- Right Actions: Instructor Rotating Border Beam + LinkedIn + GitHub -->
-      <div class="master-nav-actions">
-        <div class="master-instructor-beam" title="Lead Course Instructor &amp; Enterprise Architect">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-          <span class="inst-label">Instructor:</span>
-          <span class="inst-name">Venkata Bhattaram</span>
-        </div>
-
-        <a href="https://www.linkedin.com/in/venkata-bhattaram/" target="_blank" rel="noopener noreferrer" class="master-nav-social-btn linkedin" title="Venkata Bhattaram on LinkedIn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2Z"/></svg>
-          <span>LinkedIn</span>
-        </a>
-
-        <a href="https://github.com/venkata-bcs" target="_blank" rel="noopener noreferrer" class="master-nav-social-btn github" title="Venkata Bhattaram on GitHub">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
-          <span>GitHub</span>
-        </a>
-      </div>
     </div>
   </header>
 <div style="flex:1;width:100%;display:flex;justify-content:center;padding:20px;">
