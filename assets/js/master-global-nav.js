@@ -6,7 +6,7 @@
 (function() {
   const HOVER_OPEN_MS = 180;     // hover intent before opening
   const HOVER_CLOSE_MS = 350;    // buffer so a brief slip doesn't collapse a menu
-  const DROPDOWN_IDS = ['subjectsDropdown', 'demoDropdown', 'instructorsDropdown'];
+  const DROPDOWN_IDS = ['subjectsDropdown', 'placementDropdown', 'demoDropdown', 'instructorsDropdown'];
   const toggleOf = dd => dd.querySelector('[aria-haspopup]');
 
   function allDropdowns() {
@@ -61,6 +61,7 @@
     closeDropdown(dd);
   }
   window.toggleSubjectsDropdown = e => toggleDropdown(e, 'subjectsDropdown');
+  window.togglePlacementDropdown = e => toggleDropdown(e, 'placementDropdown');
   window.toggleDemoDropdown = e => toggleDropdown(e, 'demoDropdown');
   window.toggleInstructorsDropdown = e => toggleDropdown(e, 'instructorsDropdown');
 
