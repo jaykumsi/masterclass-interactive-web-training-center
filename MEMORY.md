@@ -61,6 +61,15 @@ The matrix rows come from [enterprise_architecture_matrix.md](enterprise_archite
   - The doc's FK example has 4 values for a 7-column table and would not fail, so it now names its columns.
   - "Change back" for the budget type restores `NUMERIC(7,2)`, not `NUMERIC(12,2)`. Added: UPDATE without WHERE, and a DELETE blocked by a foreign key.
 
+## Job Placement Readiness page ([demos/job-placement-readiness.html](demos/job-placement-readiness.html))
+
+- Added 2026-11-22. Linked from the header Demo menu under "Career readiness".
+- The Cloud DE, On-Prem DE and Full Stack tabs come from the three decks in `demos/` (`TinitiateAI_*_Job_Market_2026.pptx`): Cloud Data Engineering, On-Prem Data Engineering, Full Stack. Data lives in the `T` object in the page script; edit it there if a deck changes.
+- **It is a slideshow** (rebuilt 2026-11-22 for students and parents): 10 slides per track (11 for Full Stack), 16:9 stage that scales with container-query units, track tabs, arrows/dots, keyboard (arrows, F full screen, N notes, P auto-play), swipe on phones, deep links like `#cloud/6`, presenter notes per slide. Below 820px the slides become stacked cards.
+- Illustrations were extracted from the decks into [demos/assets/job-market/](demos/assets/job-market/) as 1600px JPEGs (`de-*`, `fs-*`, `op-*` = deck and slide number) plus `logo.png`. The AI track uses 9 illustrations generated with Higgsfield (`gpt_image_2_6`, 2026-11-22) in the same isometric style: `ai-hero`, `ai-global`, `ai-cloud`, `ai-agents`, `ai-rag`, `ai-vector`, `ai-future`, `ai-road`, `ai-team`. The AI track also has 4 extra slides (`EXTRA` in the page script): the AI stack (CrewAI, LangGraph, AWS Bedrock, Azure AI Foundry, MCP, RAG, vector DBs, LLM SDKs, with links to the course pages), agents and MCP, RAG, and vector databases. 14 slides in total. 8 more generated images fill gaps and repeats in the other tracks: `cloud-reg`, `cloud-close`, `onprem-nf`, `onprem-reg`, `onprem-close`, `fs-tech`, `fs-reg`, `fs-nf`. Skills slides show an image beside the title (`.jd-skhead`): `ai-skills`, `de-s7`, `onprem-skills`, `fs-skills`. The image-per-slide map is `ART` in the page script; tech logos come from `assets/icons/tech/` via `TECHLOGO`.
+- Verifying: plain `msedge --headless --screenshot` often shows slide text or images blank because it captures before animations and image decode finish. Drive Edge over DevTools with real waits instead (SKILLS.md skill 7).
+- The **AI Engineering** tab (added 2026-11-22 at the user's request) has **no deck**. Its salaries are estimates from public 2026 salary guides (Salary.com, Payscale, Glassdoor-based reports, Indian AI salary surveys) and its market claim cites the WEF Future of Jobs Report 2025. Europe and GCC AI salaries are thinly sourced. The page says so in the salary note. Replace with deck figures if an AI deck arrives.
+
 ## Home page hero (showcase slideshow)
 
 - The first element after the header is the **8-slide showcase** (`#about-academy`, "Tinitiate AI / MasterClass Academy"). It merged the old "Learn Right" deck and the old showcase on 2026-10-28; the Learn Right deck and its CSS/JS were removed.
