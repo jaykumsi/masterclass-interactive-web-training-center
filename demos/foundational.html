@@ -12,10 +12,11 @@
 
   <!-- Master Top Navigation Bar -->
   <header class="master-top-nav">
-    <div class="master-top-nav-inner">
+    <div class="master-top-nav-inner nav-centered">
       <a href="../index.html" class="master-brand-wrap" aria-label="Tinitiate MasterClass Academy">
         <img src="../tinitiate_header-banner.png" alt="Tinitiate Logo" class="master-brand-logo">
-        <span class="master-brand-badge">Foundational Demo</span>
+        <span class="master-brand-divider" aria-hidden="true"></span>
+        <img src="../assets/masterclass-academy-logo.png" alt="MasterClass Academy" class="master-brand-wordmark">
       </a>
 
       <!-- Primary Navigation Links (NO LOCAL NAVIGATION IN HEADER) -->
@@ -519,19 +520,58 @@
   </header>
 
   <main class="page-main-wrap" style="max-width:960px;margin:0 auto;padding:64px 24px 80px;">
-    <!-- PLACEHOLDER: replace this section with the Foundational demo -->
-    <section style="text-align:center;padding:56px 28px;border-radius:18px;background:rgba(255,255,255,0.03);border:1px solid #38bdf855;box-shadow:0 0 40px #38bdf814;">
-      <span style="display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:16px;background:#38bdf822;color:#38bdf8;border:1px solid #38bdf866;margin-bottom:20px;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>
-      </span>
-      <div style="font-size:0.75rem;font-weight:800;letter-spacing:0.1em;color:#38bdf8;margin-bottom:10px;">DEMO &bull; COMING SOON</div>
-      <h1 style="font-size:2.2rem;line-height:1.2;color:inherit;margin:0 0 12px;">Foundational Demo</h1>
-      <p style="font-size:1.05rem;color:#64748b;max-width:560px;margin:0 auto 32px;">CS fundamentals, Python, SQL & APIs. This guided demo is being prepared and will be published here soon.</p>
-      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-        <a href="../foundational/index.html" style="padding:11px 20px;border-radius:10px;background:#38bdf8;color:#0b0d10;font-weight:700;text-decoration:none;">Explore the Foundational course</a>
-        <a href="../foundational/demo.html" style="padding:11px 20px;border-radius:10px;border:1px solid rgba(100,116,139,0.45);color:inherit;font-weight:600;text-decoration:none;">Try the live lab</a>
-      </div>
+    <style>
+      .fd-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin: 0 0 32px; }
+      .fd-card {
+        display: flex; flex-direction: column; gap: 12px; padding: 26px; border-radius: 18px; text-decoration: none; color: inherit;
+        background: rgba(255,255,255,0.03); border: 1px solid var(--fd-accent-border); box-shadow: 0 0 32px var(--fd-accent-glow);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      }
+      .fd-card:hover, .fd-card:focus-visible { transform: translateY(-3px); border-color: var(--fd-accent); box-shadow: 0 10px 36px var(--fd-accent-glow); outline: none; }
+      .fd-icon { width: 56px; height: 56px; border-radius: 14px; display: grid; place-items: center; background: var(--fd-accent-glow); border: 1px solid var(--fd-accent-border); }
+      .fd-icon img { width: 32px; height: 32px; }
+      .fd-tag { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em; color: var(--fd-accent); }
+      .fd-card h2 { font-size: 1.35rem; line-height: 1.25; margin: 0; color: inherit; }
+      .fd-card p { font-size: 0.95rem; color: #64748b; margin: 0; line-height: 1.55; }
+      .fd-topics { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 2px 0 0; list-style: none; }
+      .fd-topics li { font-size: 0.75rem; font-weight: 600; padding: 3px 10px; border-radius: 14px; border: 1px solid var(--fd-accent-border); color: var(--fd-accent); }
+      .fd-go { margin-top: auto; padding-top: 8px; font-weight: 700; color: var(--fd-accent); display: inline-flex; align-items: center; gap: 6px; }
+      @media (max-width: 700px) { .fd-grid { grid-template-columns: 1fr; } }
+    </style>
+
+    <section style="text-align:center;margin-bottom:36px;">
+      <div style="font-size:0.75rem;font-weight:800;letter-spacing:0.1em;color:#38bdf8;margin-bottom:10px;">FOUNDATIONAL &bull; LIVE DEMOS</div>
+      <h1 style="font-size:2.2rem;line-height:1.2;color:inherit;margin:0 0 12px;">Foundational Demos</h1>
+      <p style="font-size:1.05rem;color:#64748b;max-width:600px;margin:0 auto;">Hands-on labs for CS fundamentals. Pick a demo, run the code in your browser and experiment.</p>
     </section>
+
+    <div class="fd-grid">
+      <a href="python-demo.html" class="fd-card" style="--fd-accent:#3776ab;--fd-accent-border:#3776ab66;--fd-accent-glow:#3776ab1f;">
+        <span class="fd-icon"><img src="../assets/icons/tech/python.svg" alt="" width="32" height="32"></span>
+        <span class="fd-tag">LIVE LAB &bull; RUNS REAL PYTHON</span>
+        <h2>Python Live Demo Lab</h2>
+        <p>Write and run Python in your browser, from variables to classes, plus two hands-on assignments.</p>
+        <ul class="fd-topics">
+          <li>Variables &amp; operators</li><li>Exceptions</li><li>Functions</li><li>OOP</li><li>Email domain</li><li>Min / max *args</li>
+        </ul>
+        <span class="fd-go">Open Python demo &rarr;</span>
+      </a>
+      <a href="sql-demo.html" class="fd-card" style="--fd-accent:#0284c7;--fd-accent-border:#0284c766;--fd-accent-glow:#0284c71f;">
+        <span class="fd-icon"><img src="../assets/icons/tech/postgresql.svg" alt="" width="32" height="32"></span>
+        <span class="fd-tag">LIVE LAB &bull; ANIMATED SQL</span>
+        <h2>SQL Demo Lab</h2>
+        <p>Pick options, read the SQL they build and watch every clause run step by step with animations.</p>
+        <ul class="fd-topics">
+          <li>Tables &amp; keys</li><li>WHERE</li><li>JOIN</li><li>GROUP BY</li><li>ORDER BY</li><li>HAVING</li>
+        </ul>
+        <span class="fd-go">Open SQL demo &rarr;</span>
+      </a>
+    </div>
+
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="../foundational/index.html" style="padding:11px 20px;border-radius:10px;background:#38bdf8;color:#0b0d10;font-weight:700;text-decoration:none;">Explore the Foundational course</a>
+      <a href="../foundational/demo.html" style="padding:11px 20px;border-radius:10px;border:1px solid rgba(100,116,139,0.45);color:inherit;font-weight:600;text-decoration:none;">Try the architecture lab</a>
+    </div>
   </main>
 
   <!-- Master Footer -->
