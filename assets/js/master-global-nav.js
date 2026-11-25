@@ -13,8 +13,11 @@
     return DROPDOWN_IDS.map(id => document.getElementById(id)).filter(Boolean);
   }
 
-  function adjustMegaMenuPosition() {
-    const menu = document.querySelector('#subjectsDropdown .master-dropdown-menu');
+  // Wide menus (Subjects mega menu, Placement) are centered under their button; clamp them
+  // inside the viewport so they never spill off-screen and create a horizontal scrollbar
+  const CLAMPED_IDS = ['subjectsDropdown', 'placementDropdown'];
+  function adjustMenuPosition(dd) {
+    const menu = dd && dd.querySelector('.master-dropdown-menu');
     if (!menu) return;
     // Nudge with margin-left so the CSS centering transform stays intact
     menu.style.marginLeft = '';
@@ -35,8 +38,13 @@
     if (viaHover) dd._hoverOpenedAt = Date.now();
     const toggle = toggleOf(dd);
     if (toggle) toggle.setAttribute('aria-expanded', 'true');
-    if (dd.id === 'subjectsDropdown') requestAnimationFrame(adjustMegaMenuPosition);
+    if (CLAMPED_IDS.includes(dd.id)) requestAnimationFrame(() => adjustMenuPosition(dd));
   }
+  window.addEventListener('resize', () => {
+    allDropdowns().forEach(dd => {
+      if (dd.classList.contains('open') && CLAMPED_IDS.includes(dd.id)) adjustMenuPosition(dd);
+    });
+  });
   function closeDropdown(dd) {
     clearTimeout(dd._openTimeout);
     clearTimeout(dd._closeTimeout);
